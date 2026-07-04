@@ -150,7 +150,7 @@ def sanitize_message(text: str, restricted_words: list) -> str:
 
     def replacer(match):
         safe_word = make_fiverr_safe(match.group(0))
-        return f"😑<b>{safe_word}</b>"  # ← wrap in bold
+        return f"<b><i>{safe_word}</i></b>"  # ← wrap in bold
 
     return regex.sub(replacer, text)
 
